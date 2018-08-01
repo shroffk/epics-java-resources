@@ -29,6 +29,9 @@ public class Example1aConnection {
         Thread.sleep(5000);
         
         noise.close();
+        
+        // Note how the alarm status of the VType changes as well as the connection
+        // changes.
     }
 
 }

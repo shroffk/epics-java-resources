@@ -10,7 +10,7 @@ import org.epics.vtype.VType;
  * @author Kunal Shroff
  *
  */
-public class Exercise1Timeout {
+public class Exercise1aTimeout {
 
     public static void main(String[] args) throws InterruptedException {
         // Connect to a channel that connects with a 2 seconds delay

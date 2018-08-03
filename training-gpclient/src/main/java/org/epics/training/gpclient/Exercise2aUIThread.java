@@ -12,7 +12,7 @@ import org.epics.vtype.VType;
  *
  */
 public class Exercise2aUIThread {
-
+    
     public static void main(String[] args) throws InterruptedException {
         // The GPClient allows you to set what thread you want to get notify
         // on. This is not just a convenience: it is how the framework can

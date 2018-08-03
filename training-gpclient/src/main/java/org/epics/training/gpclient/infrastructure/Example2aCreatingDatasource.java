@@ -107,7 +107,7 @@ public class Example2aCreatingDatasource {
                 })
                 .start();
         
-        Thread.sleep(500000);
+        Thread.sleep(5000);
         
         channel1.close();
     }

@@ -2,6 +2,7 @@ package org.epics.training.gpclient;
 
 import org.epics.gpclient.GPClient;
 import static org.epics.gpclient.GPClient.*;
+import org.epics.gpclient.PVEvent;
 import org.epics.gpclient.PVReader;
 import org.epics.vtype.VDouble;
 import org.epics.vtype.VNumber;
@@ -48,12 +49,18 @@ public class Example3TypedRead {
         PVReader<VNumber> notNumber = GPClient.read(channel("sim://strings", cacheLastValue(VNumber.class)))
                 .addReadListener((event, pvReader) -> {
                     System.out.println(event);
+                    if (event.isType(PVEvent.Type.EXCEPTION) && event.getException() instanceof IllegalArgumentException) {
+                        // TODO Create TypeMismatch exception
+                        pvReader.close();
+                    }
                 })
                 .start();
         
         Thread.sleep(5000);
         
         notNumber.close();
+        
+        // Note: you can close the pv within the listener (from whatever thread) and you can close it twice.
     }
 
 }

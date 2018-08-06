@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import org.epics.gpclient.GPClient;
 import org.epics.gpclient.PVReader;
-import org.epics.gpclient.ReadCollector;
 import org.epics.gpclient.datasource.ChannelHandler;
 import org.epics.gpclient.datasource.DataSource;
-import org.epics.gpclient.datasource.DataSourceTypeAdapter;
 import org.epics.gpclient.datasource.MultiplexedChannelHandler;
 import org.epics.vtype.VType;
 

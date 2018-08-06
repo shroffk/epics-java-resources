@@ -1,6 +1,5 @@
 package org.epics.training.gpclient;
 
-import java.time.Duration;
 import org.epics.gpclient.GPClient;
 import org.epics.gpclient.PVEvent;
 import org.epics.gpclient.PVReader;

@@ -1,13 +1,9 @@
 package org.epics.training.gpclient;
 
-import java.time.Duration;
-import java.util.List;
 import java.util.Random;
 import org.epics.gpclient.GPClient;
 import org.epics.gpclient.PVReader;
 import org.epics.vtype.VType;
-
-import static org.epics.gpclient.GPClient.*;
 
 /**
  * 

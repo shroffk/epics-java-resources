@@ -4,6 +4,7 @@ import org.epics.gpclient.GPClient;
 import static org.epics.gpclient.GPClient.*;
 import org.epics.gpclient.PVEvent;
 import org.epics.gpclient.PVReader;
+import org.epics.gpclient.TypeMismatchException;
 import org.epics.vtype.VDouble;
 import org.epics.vtype.VNumber;
 import org.epics.vtype.VString;
@@ -49,8 +50,7 @@ public class Example3TypedRead {
         PVReader<VNumber> notNumber = GPClient.read(channel("sim://strings", cacheLastValue(VNumber.class)))
                 .addReadListener((event, pvReader) -> {
                     System.out.println(event);
-                    if (event.isType(PVEvent.Type.EXCEPTION) && event.getException() instanceof IllegalArgumentException) {
-                        // TODO Create TypeMismatch exception
+                    if (event.isType(PVEvent.Type.EXCEPTION) && event.getException() instanceof TypeMismatchException) {
                         pvReader.close();
                     }
                 })

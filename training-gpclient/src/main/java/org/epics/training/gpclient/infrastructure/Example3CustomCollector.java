@@ -2,13 +2,11 @@ package org.epics.training.gpclient.infrastructure;
 
 import java.time.Duration;
 import java.util.function.Consumer;
-import org.epics.gpclient.CollectorExpression;
 import org.epics.gpclient.GPClient;
 import org.epics.gpclient.PVEvent;
 import org.epics.gpclient.PVReader;
 import org.epics.gpclient.ReadCollector;
 import org.epics.vtype.VNumber;
-import org.epics.vtype.VType;
 
 import static org.epics.gpclient.GPClient.*;
 

@@ -51,22 +51,4 @@ public class Example2bRateLimitCacheQueue {
         
         
     }
-
-    /**
-     * Read the last event value from a high event rate scalar pv
-     */
-
-    /**
-     * Read all the event values as a list of events from a high event rate scalar
-     * pv
-     */
-
-    /**
-     * Read the last event value from a high event rate waveform pv
-     */
-
-    /**
-     * Read all the event values as a list of events from a high event rate waveform
-     * pv
-     */
 }

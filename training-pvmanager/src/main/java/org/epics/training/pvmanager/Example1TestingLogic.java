@@ -18,7 +18,7 @@ import org.diirt.vtype.ValueUtil;
  * @author Kunal Shroff
  *
  */
-public class Ex1ReadWrite {
+public class Example1TestingLogic {
     
     public static class BackgroundLogic {
 
@@ -26,7 +26,7 @@ public class Ex1ReadWrite {
         private final PVReader<Map<String, Object>> inputs;
         
         public BackgroundLogic() {
-        outputs = PVManager.readAndWrite(mapOf(latestValueOf(channels("loc://output/sum", "loc://output/difference", "loc://output/product"))))
+            outputs = PVManager.readAndWrite(mapOf(latestValueOf(channels("loc://output/sum", "loc://output/difference", "loc://output/product"))))
                 .readListener(new PVReaderListener<Map<String, Object>>() {
                     public void pvChanged(PVReaderEvent<Map<String, Object>> pvre) {
                         if (pvre.isValueChanged()) {
@@ -36,7 +36,7 @@ public class Ex1ReadWrite {
                 })
                 .asynchWriteAndMaxReadRate(Duration.ofMillis(50));
 
-        inputs = PVManager.read(mapOf(latestValueOf(channels("loc://input/a", "loc://input/b"))))
+            inputs = PVManager.read(mapOf(latestValueOf(channels("loc://input/a", "loc://input/b"))))
                 .readListener(new PVReaderListener<Map<String, Object>>() {
                     public void pvChanged(PVReaderEvent<Map<String, Object>> pvre) {
                         Map<String, Object> value = pvre.getPvReader().getValue();
@@ -64,6 +64,7 @@ public class Ex1ReadWrite {
     
     public static void main(String[] args) throws InterruptedException {
         
+        // Creates the testing logic that runs in the background
         BackgroundLogic bgLogic = new BackgroundLogic();
         
         PVReader<Object> product = PVManager.read(channel("loc://output/product"))

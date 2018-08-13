@@ -12,14 +12,15 @@ import org.diirt.util.array.ListDouble;
 import org.diirt.util.array.ListNumber;
 
 /**
- * Creating formula function to process the data coming from the datasource
- * before notifying the client.
  * 
  * @author Kunal Shroff
  *
  */
 public class Example2CreateFormulaFunction {
     
+    // A Formula functions that adds a constant to an array
+    // Instead of implementing directly a FormulaFunction, we use one of the
+    // abstract functions that has most of the implementation done.
     public static class ArrayConstantSumFunction extends AbstractVNumberArrayVNumberToVNumberArrayFormulaFunction {
 
         public ArrayConstantSumFunction() {
@@ -43,20 +44,14 @@ public class Example2CreateFormulaFunction {
         
     }
 
-    /**
-     * Create a formula function for extracting an element at a given index from a
-     * waveform
-     */
-
-    /**
-     * Create an formula function that maps a pvStructure to a java map
-     * 
-     */
     
     public static void main(String[] args) throws InterruptedException {
+        // Register the function in the registry. This would be typically done
+        // with a ServiceLoader
         FormulaFunctionSet formulaFunctionSet = new FormulaFunctionSet(new FormulaFunctionSetDescription("custom", "my test functions").addFormulaFunction(new ArrayConstantSumFunction())) {};
         FormulaRegistry.getDefault().registerFormulaFunctionSet(formulaFunctionSet);
-        
+
+        // Simply use the new function in an expression.
         PVReader<?> formula = PVManager.read(ExpressionLanguage.formula("='sim://noiseWaveform'+100"))
                 .readListener((pvre) -> {
                     System.out.println(pvre.getPvReader().getValue());

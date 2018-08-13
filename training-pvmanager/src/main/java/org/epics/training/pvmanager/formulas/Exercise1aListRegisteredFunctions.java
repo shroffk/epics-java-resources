@@ -9,24 +9,13 @@ import org.diirt.datasource.formula.FormulaFunctions;
 import org.diirt.datasource.formula.FormulaRegistry;
 
 /**
- * Creating formula function to process the data coming from the datasource
- * before notifying the client.
+ * Using the Formula registry, find all the functions that are available.
  * 
  * @author Kunal Shroff
  *
  */
 public class Exercise1aListRegisteredFunctions {
 
-    /**
-     * Create a formula function for extracting an element at a given index from a
-     * waveform
-     */
-
-    /**
-     * Create an formula function that maps a pvStructure to a java map
-     * 
-     */
-    
     public static void main(String[] args) {
         for (String functionSet : FormulaRegistry.getDefault().listFunctionSets()) {
             System.out.println("Functions for " + functionSet);

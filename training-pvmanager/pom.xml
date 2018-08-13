@@ -19,6 +19,16 @@
             <artifactId>datasource-formula</artifactId>
             <version>3.1.7</version>
         </dependency>
+        <dependency>
+            <groupId>org.diirt</groupId>
+            <artifactId>service</artifactId>
+            <version>3.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.diirt</groupId>
+            <artifactId>service-exec</artifactId>
+            <version>3.1.7</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

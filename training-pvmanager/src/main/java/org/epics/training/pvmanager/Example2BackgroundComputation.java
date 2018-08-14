@@ -47,6 +47,7 @@ public class Example2BackgroundComputation {
             for (int i = 0; i < data.size(); i++) {
                 avg = data.getDouble(i);
             }
+            avg /= data.size();
 
             return ValueFactory.newVDouble(avg);
         }, latestValueOf(channel("sim://noiseWaveform(-5,5,0.1)", VNumberArray.class, Object.class))))

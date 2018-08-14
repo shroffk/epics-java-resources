@@ -10,7 +10,7 @@ import org.epics.vtype.VType;
  * @author Kunal Shroff
  *
  */
-public class Example1DirectDataCollection {
+public class Example2DirectDataCollection {
     
     public static void main(String[] args) throws InterruptedException {
         // Unlike PVManager, the GPClient is designed so that data can be

@@ -7,7 +7,7 @@ import org.epics.vtype.VType;
 
 /**
  * 
- * By using sending data directly to the read collector, experiment to see
+ * By sending data directly to the read collector, experiment to see
  * how the GPClient aggregates events while keeping the ordering.
  * For example, notify an exception before or after a value and see that,
  * even if the event are aggregated, one can still know whether the exception
@@ -16,7 +16,7 @@ import org.epics.vtype.VType;
  * @author Kunal Shroff
  *
  */
-public class Exercise1EventOrdering {
+public class Exercise2EventOrdering {
     
     public static void main(String[] args) throws InterruptedException {
         CollectorExpression<VType, VType, Object> collector = GPClient.collector();

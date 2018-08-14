@@ -14,7 +14,7 @@ import org.epics.vtype.VType;
  * @author Kunal Shroff
  *
  */
-public class Example2aCreatingDatasource {
+public class Example1aCreatingDatasource {
     
     // Creates the new datasource
     static DataSource myDataSource = new DataSource() {

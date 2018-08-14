@@ -52,7 +52,7 @@ public class Example2SumService {
         ExecutorService exec = Executors.newSingleThreadExecutor(namedPool("multiplyService"));
 
         // This method is implemented asynchronously: use the callbacks when
-        // the task is completed
+        // the task is completed or has failed
         @Override
         public void asyncExecImpl(Map<String, Object> parameters, Consumer<Map<String, Object>> callback, Consumer<Exception> errorCallback) {
             exec.submit(() -> {
@@ -101,14 +101,6 @@ public class Example2SumService {
                 .createService();
     }
 
-    /**
-     * Create a simple math service to perform mathematical operation on 2
-     * scalars
-     */
-    /**
-     * Create a simple programmatically client to the above service to add to
-     * numbers
-     */
     public static void main(String[] args) {
         // Register the service. This is would be done with the ServiceLoader
         ServiceRegistry.getDefault().registerService(createMathService());
@@ -128,6 +120,7 @@ public class Example2SumService {
         // Note that the execution does not care whether the implementation is
         // synch or asynch. The framework takes care of wiring any type of call
         // with any type of implementation. You can also provide both synch
-        // and asynch implementaion, and the framework will wire appropriately.
+        // and asynch implementation for the same method, and the framework
+        // will wire appropriately.
     }
 }

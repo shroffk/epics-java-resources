@@ -16,7 +16,7 @@ import org.diirt.vtype.ValueFactory;
 public class Example1UsingServices {
     
     public static void main(String[] args) throws InterruptedException {
-        // List all registered services and their method
+        // List all registered services and their methods
         for (String serviceName : ServiceRegistry.getDefault().getRegisteredServiceNames()) {
             System.out.println("Methods for " + serviceName);
             for (Map.Entry<String, ServiceMethod> methodEntry : ServiceRegistry.getDefault().findService(serviceName).getServiceMethods().entrySet()) {
@@ -24,12 +24,12 @@ public class Example1UsingServices {
             }
         }
         
-        // Find the the command line execution service and prepare the command
+        // Find the the command line execution service and prepare the command arguments
         ServiceMethod exec = ServiceRegistry.getDefault().findServiceMethod("exec/run");
         Map<String, Object> callArgs = new HashMap<>();
         callArgs.put("command", ValueFactory.toVType("echo This is a test!"));
         
-        // Execute the service synchronously: result will wait and return the
+        // Execute the service synchronously: will wait and return the
         // result on the current thread
         {
             Map<String, Object> result = exec.executeSync(callArgs);

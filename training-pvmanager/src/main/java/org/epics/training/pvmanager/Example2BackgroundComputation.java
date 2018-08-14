@@ -28,7 +28,7 @@ public class Example2BackgroundComputation {
     
     public static void main(String[] args) throws InterruptedException {
         
-        // PVManager allows to put move computation off in the background
+        // PVManager allows to move computation off in the background
         // thread pool, so that the value is already calculated before the
         // notification. This is particularly helpful when the notification
         // has to happen on a single threaded subsystem (like a UI).

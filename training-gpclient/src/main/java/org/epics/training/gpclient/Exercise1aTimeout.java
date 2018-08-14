@@ -6,6 +6,10 @@ import org.epics.gpclient.PVReader;
 import org.epics.vtype.VType;
 
 /**
+ * Add a connection timeout while reading a channel. To test, use channel
+ * sim://delayedConnectionChannel(2, "init") which will connect with a 
+ * two-second delay and then send the string value "init"
+ * 
  * @author Kunal Shroff
  *
  */

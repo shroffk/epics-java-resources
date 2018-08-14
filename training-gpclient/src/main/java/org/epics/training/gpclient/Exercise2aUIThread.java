@@ -6,6 +6,10 @@ import org.epics.util.concurrent.Executors;
 import org.epics.vtype.VType;
 
 /**
+ * Use notifyOn, tell the GPClient to send the event to the UI thread.
+ * For example, use org.epics.util.concurrent.Executors.swingEDT()
+ * to send events to the Swing thread.
+ * 
  * @author Kunal Shroff
  *
  */
